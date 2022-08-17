@@ -1,0 +1,8 @@
+1- create the project
+run CLI
+	dotnet tool install -g Volo.Abp.Cli
+	dotnet tool update -g Volo.Abp.Cli
+	abp new ProductManagement
+2-change DB Connection in appsettings.json (ProductManagement.DbMigrator /ProductManagement.Web)
+3-set ProductManagement.DbMigrator as start up->run
+4-set ProductManagement.Web as start up->run
