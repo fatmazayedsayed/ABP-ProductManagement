@@ -1,3 +1,4 @@
+*A set up the project
 1- create the project
 run CLI
 	dotnet tool install -g Volo.Abp.Cli
@@ -6,3 +7,12 @@ run CLI
 2-change DB Connection in appsettings.json (ProductManagement.DbMigrator /ProductManagement.Web)
 3-set ProductManagement.DbMigrator as start up->run
 4-set ProductManagement.Web as start up->run
+---------------------------------------------------------
+B-Create project Domain
+1-Create a Categories folder inside the ProductManagement.Domain project and a Category class inside it.
+2-Create a Products folder inside the ProductManagement.Domain.Shared project and a ProductStockState enum inside it.
+3-Create a Products folder inside the ProductManagement.Domain project and a Product class inside it.
+
+for validation 
+4-create a Categories folder inside the ProductManagement.Domain.Shared project and add a CategoryConsts class inside it
+5-create a ProductConsts class inside the Products folder of the ProductManagement.Domain.Shared
