@@ -16,3 +16,15 @@ B-Create project Domain
 for validation 
 4-create a Categories folder inside the ProductManagement.Domain.Shared project and add a CategoryConsts class inside it
 5-create a ProductConsts class inside the Products folder of the ProductManagement.Domain.Shared
+---------------------------------------------------------
+C-DB migration
+1-Open the ProductManagementDbContext class in the ProductManagement.EntityFrameworkCore project, and add the  product/category DbSet  
+2-The Add-Migration command
+Visual Studio, open Package Manager Console (PMC) from the View |Other Windows | Package Manager Console menu
+Select the ProductManagement.EntityFrameworkCore project as the Default project type.
+Ensure that the ProductManagement.Web project is selected as the startup project. 
+You can right-click on the ProductManagement.Web project and click on the Set as Startup Project action.
+[Add-Migration "Added_Categories_And_Products"]
+3-Seeding Data
+Create a ProductManagementDataSeedContributor class in the Data folder of the ProductManagement.Domain project
+---------------------------------------------------------

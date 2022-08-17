@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProductManagement.Categories;
+using ProductManagement.Products;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -37,7 +39,8 @@ public class ProductManagementDbContext :
      * More info: Replacing a DbContext of a module ensures that the related module
      * uses this DbContext on runtime. Otherwise, it will use its own DbContext class.
      */
-
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Category> Categories { get; set; }
     //Identity
     public DbSet<IdentityUser> Users { get; set; }
     public DbSet<IdentityRole> Roles { get; set; }
@@ -73,13 +76,35 @@ public class ProductManagementDbContext :
         builder.ConfigureFeatureManagement();
         builder.ConfigureTenantManagement();
 
+
+
+
+
+
         /* Configure your own tables/entities inside here */
 
-        //builder.Entity<YourEntity>(b =>
-        //{
-        //    b.ToTable(ProductManagementConsts.DbTablePrefix + "YourEntities", ProductManagementConsts.DbSchema);
-        //    b.ConfigureByConvention(); //auto configure for the base class props
-        //    //...
-        //});
+        builder.Entity<Category>(b =>
+            {
+                b.ToTable("Categories");
+                b.Property(x => x.Name)
+            .HasMaxLength(CategoryConsts.MaxNameLength)
+            .IsRequired();
+                b.HasIndex(x => x.Name);
+            });
+
+        builder.Entity<Product>(b =>
+        {
+            b.ToTable("Products");
+            b.Property(x => x.Name)
+    .HasMaxLength(ProductConsts.MaxNameLength)
+    .IsRequired();
+            b.HasOne(x => x.Category)
+    .WithMany()
+    .HasForeignKey(x => x.CategoryId)
+    .OnDelete(DeleteBehavior.Restrict)
+    .IsRequired();
+            b.HasIndex(x => x.Name).IsUnique();
+        });
     }
 }
+
