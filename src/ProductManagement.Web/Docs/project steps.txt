@@ -26,5 +26,34 @@ Ensure that the ProductManagement.Web project is selected as the startup project
 You can right-click on the ProductManagement.Web project and click on the Set as Startup Project action.
 [Add-Migration "Added_Categories_And_Products"]
 3-Seeding Data
-Create a ProductManagementDataSeedContributor class in the Data folder of the ProductManagement.Domain project
+Create a ProductManagementDataSeedContributor class in the Data folder of the ProductManagement.Domain 
+project
 ---------------------------------------------------------
+D-DTO
+1-Application.Contracts project create ProductDto
+2-Application Services implement the use cases of an application. The UI uses them to
+perform business logic on user interactions.
+3-Create a ProductAppService class inside the Products folder of the ProductManagement.Application project
+4-Open the ProductManagementApplicationAutoMapperProfile class in the ProductManagement.Application 
+project
+
+E-Test
+1-Create a Products folder in the ProductManagement.Application.Tests project, and create a 
+ProductAppService_Tests class 
+
+F-UI
+1- create a Products folder under the Pages folder of the ProductManagement.Web project. Then, 
+add a new, empty razor page by right-clicking on the Products folder and then selecting 
+Add | Razor Page. Select the Razor Page - Empty option. 
+Name it Index.cshtml
+2-add page in menu
+Open the ProductManagementMenuContributor class in the Menus folder of the ProductManagement.Web project
+3-localization ProductManagement.Domain.Shared.
+4-Create a new CreateProductModal.cshtml Razor Page under the Pages/Products
+folder of the ProductManagement.Web project. Open the CreateProductModal.cshtml.cs file
+5- we need to define the mapping configuration. Open the ProductManagementWebAutoMapperProfile 
+class in the ProductManagement.Web project
+6-add a New Product button to the products page to open that modal.
+
+7-Editing products:
+Create a new EditProductModal.cshtml

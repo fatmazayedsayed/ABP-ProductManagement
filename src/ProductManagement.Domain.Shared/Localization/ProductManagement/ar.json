@@ -3,6 +3,21 @@
   "texts": {
     "Menu:Home": "الرئيسية",
     "Welcome": "مرحبا",
-    "LongWelcomeMessage": "مرحبا بكم في التطبيق. هذا مشروع بدء تشغيل يعتمد على إطار عمل ABP. لمزيد من المعلومات ، يرجى زيارة abp.io."
+    "LongWelcomeMessage": "مرحبا بكم في التطبيق. هذا مشروع بدء تشغيل يعتمد على إطار عمل ABP. لمزيد من المعلومات ، يرجى زيارة abp.io.",
+    "Menu:ProductManagement": "إدارة المنتجات",
+    "Menu:Products": "منتجات",
+    "Name": "Name",
+    "CategoryName": "Category name",
+    "Price": "Price",
+    "StockState": "Stock state",
+    "Enum:StockState:0": "Pre-order",
+    "Enum:StockState:1": "In stock",
+    "Enum:StockState:2": "Not available",
+    "Enum:StockState:3": "Stopped",
+    "CreationTime": "Creation time",
+    "NewProduct": "New Product",
+    "Category": "Category",
+    "IsFreeCargo": "Free Cargo",
+    "ReleaseDate": "Release Date"
   }
 }
