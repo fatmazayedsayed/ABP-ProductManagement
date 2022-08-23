@@ -55,5 +55,6 @@ folder of the ProductManagement.Web project. Open the CreateProductModal.cshtml.
 class in the ProductManagement.Web project
 6-add a New Product button to the products page to open that modal.
 
-7-Editing products:
-Create a new EditProductModal.cshtml
+7-Editing products:Create a new EditProductModal.cshtml
+
+8-Delete product
